@@ -18,8 +18,8 @@ print(f"Power: {compute_power(audio_data)}")
 
 print("Sampling rate: ", sr)
 
-# plot_waveform(audio_data, output_dir="plots", filename="v5_waveform.png")
-# plot_waveform(audio_data[50000:100000], output_dir="plots", filename="v5_waveform_segment.png")
+plot_waveform(audio_data, output_dir="Plots", filename="v5_waveform.png")
+plot_waveform(audio_data[50000:100000], output_dir="Plots", filename="v5_waveform_segment.png")
 
 print("Writing new wav with 2 times greater volume. Saved in ", audiofile_greater_volume_path)
 louder_data = audio_data * 2.0
@@ -32,4 +32,4 @@ change_sampling_rate(audiofile_path, audio_low_sr_path, sr//2)
 
 generate_sinusoidal_signal(440, 5, sinusoidal_path)
 _, sinusoidal_data = read_audio(sinusoidal_path)
-plot_waveform(sinusoidal_data, output_dir="plots", filename="sinusoid.png")
+plot_waveform(sinusoidal_data, output_dir="Plots", filename="sinusoid.png")
