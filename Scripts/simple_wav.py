@@ -1,9 +1,4 @@
-# sampling rate is the same as sampling frequency
-# 1) compute power of this wav
-# 2) create function which plots previously defined segment of data
-# 3) study signal data (print various segments of signal)
-# 4) write new wav with 2 times greater volume
-# 5) decrease the audio sampling rate 2 times
+
 # 6) write a function which generates a sinusoidal signal with the given frequency and saves it as .wav file
 # functions below will help to accomplish tasks 1)-5)
 import numpy as np
@@ -21,11 +16,10 @@ import matplotlib.colors as colors
 import glob
 import subprocess
 
-file_path = 'v.wav'
-start = 16000
-end = 24000
+# file_path = 'v.wav'
+# start = 16000
+# end = 24000
 
-import numpy as np
 
 # The function from the matplotlib.mlab was obsolete so I needed to replace it
 def bivariate_normal(X, Y, sigmax=1.0, sigmay=1.0, mux=0.0, muy=0.0, sigmaxy=0.0):
@@ -54,7 +48,7 @@ def compute_power(data):
 	power = np.mean(data**2)
 	return power
 
-#I have added the output_dir and the filename parameters here to save the plots.
+# Added the output_dir and the filename parameters to optionally save the plots.
 def plot_waveform(data, sampling_frequency=None, output_dir=None, filename=None):
 	# data: the audio waveform data
     if sampling_frequency:
@@ -81,7 +75,7 @@ def plot_waveform(data, sampling_frequency=None, output_dir=None, filename=None)
 def change_sampling_rate(input_path, output_path, output_sr):
 	# input_path: path of input audio file
 	# output_path: path of output audio file
-	# output_sr: sampling rate of autput_path, integer
+	# output_sr: sampling rate of output_path, integer
 	assert input_path != output_path, 'input_path and output_path should not coincide'
 	# make sure you have installed ffmpeg
 	subprocess.call(['ffmpeg', '-i', input_path, '-ar', str(output_sr), output_path])
