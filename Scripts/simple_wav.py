@@ -1,6 +1,3 @@
-
-# 6) write a function which generates a sinusoidal signal with the given frequency and saves it as .wav file
-# functions below will help to accomplish tasks 1)-5)
 import numpy as np
 import scipy.io.wavfile as wavfile
 import scipy.io
@@ -28,6 +25,14 @@ def bivariate_normal(X, Y, sigmax=1.0, sigmay=1.0, mux=0.0, muy=0.0, sigmaxy=0.0
     rho = sigmaxy / (sigmax * sigmay)
     z = (Xmu**2 / sigmax**2 + Ymu**2 / sigmay**2 - 2 * rho * Xmu * Ymu / (sigmax * sigmay))
     return 1.0 / (2 * np.pi * sigmax * sigmay * np.sqrt(1 - rho**2)) * np.exp(-z / (2 * (1 - rho**2)))
+
+def generate_sinusoidal_signal(freq, duration, path, sr=44100, amplitude=0.5):
+    number_of_points = int(sr * duration)
+    t = np.linspace(0, duration, number_of_points)
+    data = amplitude * np.sin(2 * np.pi * freq * t)
+    data_int16 = (data * 32767.0)
+    write_audio(path, sr, data_int16)
+    return None
 
 # The function has been changed to return the sampling rate as well
 def read_audio(path):
