@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .vscode/
-plots/
+Plots/
 *.wav
+!v5.wav
 .venv/
