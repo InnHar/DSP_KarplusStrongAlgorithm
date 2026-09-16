@@ -48,9 +48,9 @@ python Scripts/main.py
 
 # Tasks Implemented
 
-1) Compute power of this wav
-2) Create function which plots previously defined segment of data
-3) Study signal data (print various segments of signal)
-4) Write new wav with 2 times greater volume
-5) Decrease the audio sampling rate 2 times
-6) Write a function which generates a sinusoidal signal with the given frequency and saves it as .wav file
+1) Compute power of the provided .wav file.
+2) Create function which plots previously defined segment of data.
+3) Study signal data (print various segments of signal).
+4) Write new .wav with 2 times greater volume.
+5) Decrease the audio sampling rate 2 times.
+6) Write a function which generates a sinusoidal signal with the given frequency and saves it as .wav file.
