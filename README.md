@@ -2,6 +2,8 @@
 
 A collection of basic Digital Signal Processing (DSP) tasks implemented in Python, including waveform visualization, audio resampling, power computation, and signal generation.
 
+The Karplus–Strong algorithm is also implemented and used to synthesize a plucked-string sound corresponding to the A4 note (440 Hz).
+
 ---
 
 # Setup & Installation
